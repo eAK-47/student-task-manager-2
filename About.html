@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Student Task Manager</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="codestyle.css">
+</head>
+<body class="page-about" style="background-color: #060d1a; color: #f8fafc; font-family: 'Plus Jakarta Sans', 'Outfit', sans-serif; display: flex; justify-content: center; align-items: center; min-height: 100vh; margin: 0; padding: 20px; position: relative; overflow-x: hidden;">
+
+    <div class="bg-orb bg-orb-1" style="position: absolute; width: 350px; height: 350px; border-radius: 50%; filter: blur(130px); opacity: 0.12; z-index: 0; pointer-events: none; top: -10%; left: -5%; background: #2563eb;"></div>
+    <div class="bg-orb bg-orb-2" style="position: absolute; width: 350px; height: 350px; border-radius: 50%; filter: blur(130px); opacity: 0.12; z-index: 0; pointer-events: none; bottom: -10%; right: -5%; background: #10b981;"></div>
+
+    <div class="about-card" style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-radius: 16px; padding: 40px; max-width: 680px; width: 100%; box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4); position: relative; z-index: 1;">
+        
+        <h2 style="color: #ffffff; font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 2rem; margin-top: 0; margin-bottom: 12px; letter-spacing: -0.02em;">Features & Capabilities</h2>
+        
+        <p style="color: #94a3b8; font-size: 0.95rem; line-height: 1.6; margin-bottom: 24px;">
+            Stay organized, focused, and on top of your academic responsibilities effortlessly. Here is a look at the core features of the Student Task Manager:
+        </p>
+        
+        <ul class="feature-list" style="list-style: none; padding-left: 0; margin-bottom: 32px;">
+            <li style="color: #cbd5e1; font-size: 0.925rem; line-height: 1.5; margin-bottom: 14px; display: flex; align-items: flex-start; gap: 10px;"><span style="color: #10b981; font-weight: bold;">✓</span><span><strong style="color: #ffffff; font-weight: 600;">Clean & Interactive UI:</strong> Enjoy a simple, user-friendly interface that makes managing tasks quick and stress-free.</span></li>
+            <li style="color: #cbd5e1; font-size: 0.925rem; line-height: 1.5; margin-bottom: 14px; display: flex; align-items: flex-start; gap: 10px;"><span style="color: #10b981; font-weight: bold;">✓</span><span><strong style="color: #ffffff; font-weight: 600;">Track Assignments:</strong> Never miss a deadline by logging all your homework, essays, and major projects with due dates.</span></li>
+            <li style="color: #cbd5e1; font-size: 0.925rem; line-height: 1.5; margin-bottom: 14px; display: flex; align-items: flex-start; gap: 10px;"><span style="color: #10b981; font-weight: bold;">✓</span><span><strong style="color: #ffffff; font-weight: 600;">Prioritize Work:</strong> Sort your tasks by High, Medium, or Low priority to tackle the most important goals first.</span></li>
+            <li style="color: #cbd5e1; font-size: 0.925rem; line-height: 1.5; margin-bottom: 14px; display: flex; align-items: flex-start; gap: 10px;"><span style="color: #10b981; font-weight: bold;">✓</span><span><strong style="color: #ffffff; font-weight: 600;">Set Reminders:</strong> Keep track of upcoming exams and assignment submission dates through the Notifications page.</span></li>
+            <li style="color: #cbd5e1; font-size: 0.925rem; line-height: 1.5; margin-bottom: 14px; display: flex; align-items: flex-start; gap: 10px;"><span style="color: #10b981; font-weight: bold;">✓</span><span><strong style="color: #ffffff; font-weight: 600;">Smart Alerts:</strong> Get notified about overdue tasks, tasks due today, and high-priority pending assignments.</span></li>
+            <li style="color: #cbd5e1; font-size: 0.925rem; line-height: 1.5; margin-bottom: 14px; display: flex; align-items: flex-start; gap: 10px;"><span style="color: #10b981; font-weight: bold;">✓</span><span><strong style="color: #ffffff; font-weight: 600;">Progress Dashboard:</strong> View a live summary of completed and pending tasks with a dynamic progress bar.</span></li>
+            <li style="color: #cbd5e1; font-size: 0.925rem; line-height: 1.5; margin-bottom: 14px; display: flex; align-items: flex-start; gap: 10px;"><span style="color: #10b981; font-weight: bold;">✓</span><span><strong style="color: #ffffff; font-weight: 600;">Edit & Complete Tasks:</strong> Update task details or mark tasks as completed directly from the Task Manager page.</span></li>
+            <li style="color: #cbd5e1; font-size: 0.925rem; line-height: 1.5; margin-bottom: 14px; display: flex; align-items: flex-start; gap: 10px;"><span style="color: #10b981; font-weight: bold;">✓</span><span><strong style="color: #ffffff; font-weight: 600;">Daily Schedule:</strong> Add, edit, and delete your daily class schedule entries with room and teacher details.</span></li>
+            <li style="color: #cbd5e1; font-size: 0.925rem; line-height: 1.5; margin-bottom: 14px; display: flex; align-items: flex-start; gap: 10px;"><span style="color: #10b981; font-weight: bold;">✓</span><span><strong style="color: #ffffff; font-weight: 600;">Data Persistence:</strong> All tasks, schedule entries, and profile details are saved using localStorage so nothing is lost on refresh.</span></li>
+        </ul>
+        
+        <button class="back-button" onclick="window.location.href='index.html'" style="background: rgba(255, 255, 255, 0.03); color: #ffffff; border: 1px solid rgba(255, 255, 255, 0.1); padding: 12px 24px; font-size: 0.9rem; font-weight: 600; border-radius: 8px; cursor: pointer; transition: all 0.25s ease-in-out; font-family: 'Plus Jakarta Sans', sans-serif;">← Back to Home</button>
+    </div>
+
+    <script>
+        const backBtn = document.querySelector('.back-button');
+        backBtn.addEventListener('mouseenter', () => {
+            backBtn.style.background = '#10b981';
+            backBtn.style.borderColor = '#10b981';
+            backBtn.style.boxShadow = '0 0 15px rgba(16, 185, 129, 0.4)';
+            backBtn.style.transform = 'translateY(-2px)';
+        });
+        backBtn.addEventListener('mouseleave', () => {
+            backBtn.style.background = 'rgba(255, 255, 255, 0.03)';
+            backBtn.style.borderColor = 'rgba(255, 255, 255, 0.1)';
+            backBtn.style.boxShadow = 'none';
+            backBtn.style.transform = 'translateY(0)';
+        });
+    </script>
+</body>
+</html>

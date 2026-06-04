@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="codestyle.css"/>
+
+
+<body class="page-about">
+    <!-- Animated Ambient Glass Orbs (Emerald & Gold Aurora) -->
+    <div class="bg-orb bg-orb-1"></div>
+    <div class="bg-orb bg-orb-2"></div>
+    <div class="bg-orb bg-orb-3"></div>
+    <div class="about-card" style="margin-top: 32px;">
+
+        <h2>Meet the Team</h2>
+        <p>
+            This project was built by four B.Tech Computer Science Engineering students at <strong>Amrita Vishwa Vidyapeetham</strong> as part of their User Interface Design course.
+        </p>
+        <div class="team-grid">
+            <a href="https://s1prime.github.io/Portfolio/" target="_blank" class="avatar-link">
+            <div class="team-card">
+            <div class="team-card">
+                <div class="team-avatar">V</div>
+                <div class="team-name">Vaishnav Venu</div>
+                <div class="team-role">B.Tech CSE · Amrita Vishwa Vidyapeetham</div>
+            </div>
+            </div>
+            </a>
+            <a href="https://eak-47.github.io/Portfolio/" target="_blank" class="avatar-link">
+            <div class="team-card">
+            <div class="team-card">
+                <div class="team-avatar">A</div>
+                <div class="team-name">Akash S Kishor</div>
+                <div class="team-role">B.Tech CSE · Amrita Vishwa Vidyapeetham</div>
+            </div>
+            </div>
+
+            </a>
+            <a href="https://www.rajbarnawal.com.np/" target="_blank" class="avatar-link">
+            <div class="team-card">
+            <div class="team-card">
+                <div class="team-avatar">R</div>
+                <div class="team-name">Raj Barnawal</div>
+                <div class="team-role">B.Tech CSE · Amrita Vishwa Vidyapeetham</div>
+            </div>
+            </div>
+            </a>
+            <a href="https://www.prafulsingh.com.np/" target="_blank" class="avatar-link">
+            <div class="team-card">
+            <div class="team-card">
+                <div class="team-avatar">P</div>
+                <div class="team-name">Praful Singh</div>
+                <div class="team-role">B.Tech CSE · Amrita Vishwa Vidyapeetham</div>
+            </div>
+            </div>
+            </a>
+         </div>
+     </div>
+</div>
+
+ <div class="team-card">
+        <button class="back-button" onclick="window.location.href='index.html'" style="background: rgba(255, 255, 255, 0.03); color: #ffffff; border: 1px solid rgba(255, 255, 255, 0.1); padding: 12px 24px; font-size: 0.9rem; font-weight: 600; border-radius: 8px; cursor: pointer; transition: all 0.25s ease-in-out; font-family: 'Plus Jakarta Sans', sans-serif;">← Back to Home</button>
+
+        <script>
+        const backBtn = document.querySelector('.back-button');
+        backBtn.addEventListener('mouseenter', () => {
+            backBtn.style.background = '#10b981';
+            backBtn.style.borderColor = '#10b981';
+            backBtn.style.boxShadow = '0 0 15px rgba(16, 185, 129, 0.4)';
+            backBtn.style.transform = 'translateY(-2px)';
+        });
+        backBtn.addEventListener('mouseleave', () => {
+            backBtn.style.background = 'rgba(255, 255, 255, 0.03)';
+            backBtn.style.borderColor = 'rgba(255, 255, 255, 0.1)';
+            backBtn.style.boxShadow = 'none';
+            backBtn.style.transform = 'translateY(0)';
+        });
+        </script>
+    </div>
+</body>
+</html>

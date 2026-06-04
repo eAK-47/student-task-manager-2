@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Us — Student Task Manager</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="codestyle.css">
+</head>
+<body class="page-contact" style="background-color: #060d1a; color: #f8fafc; font-family: 'Inter', sans-serif;">
+
+  <div class="bg-orb bg-orb-1" style="position: absolute; width: 400px; height: 400px; border-radius: 50%; filter: blur(120px); z-index: 0; opacity: 0.15; pointer-events: none; top: -10%; left: -10%; background: #2563eb;"></div>
+  <div class="bg-orb bg-orb-2" style="position: absolute; width: 400px; height: 400px; border-radius: 50%; filter: blur(120px); z-index: 0; opacity: 0.15; pointer-events: none; bottom: -10%; right: -10%; background: #7c3aed;"></div>
+
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top glass-navbar py-3" style="background: rgba(6, 13, 26, 0.7); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255, 255, 255, 0.05);">
+    <div class="container-xl">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+        <span class="fs-4">📚</span>
+        <span class="fw-bold tracking-wider fs-6 text-white">STUDENT<span class="text-primary" style="color: #10b981 !important;"> TASK </span>MANAGER</span>
+      </a>
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNavbar">
+        <ul class="navbar-nav mx-auto mb-2 mb-md-0 gap-2">
+          <li class="nav-item"><a class="nav-link text-secondary" href="Dashboard.html">Dashboard</a></li>
+          <li class="nav-item"><a class="nav-link text-secondary" href="faq.html">FAQs</a></li>
+          <li class="nav-item"><a class="nav-link text-primary active" href="contact.html" style="color: #10b981 !important;">Contact Us</a></li>
+        </ul>
+        <div class="d-flex gap-2">
+          <a href="index.html" class="btn py-2 px-3 fs-7 text-white" style="border: 1px solid rgba(255, 255, 255, 0.1); background: rgba(255, 255, 255, 0.02); border-radius: 8px;">Logout</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <section class="container text-center position-relative z-1" style="padding-top: 9rem; padding-bottom: 6rem;">
+    <div class="row justify-content-center g-5 text-start">
+      
+      <div class="col-lg-6">
+        <div class="p-4 p-md-5" style="background: linear-gradient(135deg, rgba(8, 20, 16, 0.4) 0%, rgba(3, 8, 12, 0.4) 100%); border: 1px solid rgba(16, 185, 129, 0.1); border-radius: 16px;">
+          <h3 class="text-white fw-bold mb-2">Get in Touch</h3>
+          <p class="text-secondary small mb-4">Have an issue or enhancement recommendation? Send our design squad an active alert.</p>
+          
+          <form id="contactForm" onsubmit="handleContactSubmit(event)">
+            <div class="mb-3">
+              <label class="form-label text-secondary small mb-1 fw-medium">Full Name</label>
+              <input type="text" class="form-control text-white" required style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); padding: 10px; border-radius: 8px;">
+            </div>
+            <div class="mb-3">
+              <label class="form-label text-secondary small mb-1 fw-medium">Academic Email</label>
+              <input type="email" class="form-control text-white" required style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); padding: 10px; border-radius: 8px;">
+            </div>
+            <div class="mb-3">
+              <label class="form-label text-secondary small mb-1 fw-medium">Message Query</label>
+              <textarea class="form-control text-white" rows="4" required style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); padding: 10px; border-radius: 8px;"></textarea>
+            </div>
+            <button type="submit" class="btn btn-lg w-100 fs-7 mt-2 text-white fw-semibold" style="background: #10b981; border: none; padding: 12px; border-radius: 8px; transition: background 0.2s;">
+              🚀 Dispatch Message
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <div class="col-lg-5 d-flex flex-column justify-content-between">
+        <div class="p-4 mb-4" style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); border-radius: 12px;">
+          <h5 class="text-white fw-semibold mb-2">🏫 Academic Laboratory</h5>
+          <p class="text-secondary small mb-0">
+            User Interface Design Project Group<br>
+            B.Tech Computer Science Engineering<br>
+            Amrita Vishwa Vidyapeetham
+          </p>
+        </div>
+
+        <div class="p-4" style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); border-radius: 12px;">
+          <h5 class="text-white fw-semibold mb-3">🛠️ Project Architects</h5>
+          <div class="row g-2 text-center text-white small fw-medium">
+            <div class="col-6"><div class="py-2 rounded" style="background: rgba(255,255,255,0.03);">Vaishnav Venu</div></div>
+            <div class="col-6"><div class="py-2 rounded" style="background: rgba(255,255,255,0.03);">Akash S Kishor</div></div>
+            <div class="col-6"><div class="py-2 rounded" style="background: rgba(255,255,255,0.03);">Raj Barnawal</div></div>
+            <div class="col-6"><div class="py-2 rounded" style="background: rgba(255,255,255,0.03);">Praful Singh</div></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <script>
+    function handleContactSubmit(event) {
+      event.preventDefault();
+      alert("✓ Message Dispatched Successfully! Our UID group layout architects will address your query soon.");
+      document.getElementById("contactForm").reset();
+    }
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

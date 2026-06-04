@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Today's Schedule — Student Task Manager</title>
+    
+    <!-- Premium Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="codestyle.css">
+</head>
+
+<body class="page-schedule">
+    <!-- Animated Ambient Glass Orbs (Emerald & Gold Aurora) -->
+    <div class="bg-orb bg-orb-1"></div>
+    <div class="bg-orb bg-orb-2"></div>
+    <div class="bg-orb bg-orb-3"></div>
+
+    <div class="container">
+
+<h1>📅 Today's Schedule</h1>
+
+<!-- Add New Entry Form -->
+<div class="schedule-card" style="flex-wrap:wrap;gap:12px;">
+  <div style="display:flex;flex-direction:column;gap:6px;min-width:100px;">
+    <label style="font-size:12px;color:gray;font-weight:600;">Time</label>
+    <input type="text" id="timeInput" placeholder="e.g. 3:00 PM" style="padding:10px;border-radius:8px;border:1px solid #ddd;font-size:14px;width:110px;">
+  </div>
+  <div style="display:flex;flex-direction:column;gap:6px;flex:1;min-width:150px;">
+    <label style="font-size:12px;color:gray;font-weight:600;">Subject</label>
+    <input type="text" id="subjectInput" placeholder="Subject name" style="padding:10px;border-radius:8px;border:1px solid #ddd;font-size:14px;width:100%;">
+  </div>
+  <div style="display:flex;flex-direction:column;gap:6px;flex:1;min-width:130px;">
+    <label style="font-size:12px;color:gray;font-weight:600;">Room</label>
+    <input type="text" id="roomInput" placeholder="e.g. Room C301" style="padding:10px;border-radius:8px;border:1px solid #ddd;font-size:14px;width:100%;">
+  </div>
+  <div style="display:flex;flex-direction:column;gap:6px;flex:1;min-width:130px;">
+    <label style="font-size:12px;color:gray;font-weight:600;">Teacher</label>
+    <input type="text" id="teacherInput" placeholder="Teacher name" style="padding:10px;border-radius:8px;border:1px solid #ddd;font-size:14px;width:100%;">
+  </div>
+  <div style="display:flex;align-items:flex-end;">
+    <button id="addEntryBtn" onclick="addEntry()" style="padding:12px 20px;border:none;border-radius:8px;background:#111827;color:white;font-size:15px;cursor:pointer;white-space:nowrap;">+ Add</button>
+  </div>
+</div>
+
+<!-- Schedule List -->
+<div id="scheduleList" style="margin-top: 24px;"></div>
+
+<div class="exit">
+    <button onclick="goBack()">← Exit to Dashboard</button>
+</div>
+
+</div>
+
+<script>
+    // Load schedule from localStorage or load default items
+    function getSchedule() {
+        let stored = localStorage.getItem("studentSchedule");
+        if (stored) {
+            return JSON.parse(stored);
+        }
+        // Defaults if localStorage is empty
+        let defaultSchedule = [
+            { time: "09:00 AM", subject: "User Interface Design", room: "Audi 2", teacher: "Dr. Anand" },
+            { time: "11:00 AM", subject: "Database Management Systems", room: "Room B204", teacher: "Prof. Deepa" },
+            { time: "02:00 PM", subject: "Java OOP Lab", room: "Lab 3", teacher: "Ms. Reshma" }
+        ];
+        localStorage.setItem("studentSchedule", JSON.stringify(defaultSchedule));
+        return defaultSchedule;
+    }
+
+    // Save schedule to localStorage
+    function saveSchedule(schedule) {
+        localStorage.setItem("studentSchedule", JSON.stringify(schedule));
+    }
+
+    // Render schedule items
+    function renderSchedule() {
+        let schedule = getSchedule();
+        let listDiv = document.getElementById("scheduleList");
+        listDiv.innerHTML = "";
+
+        if (schedule.length === 0) {
+            listDiv.innerHTML = `<div class="schedule-list-card" style="text-align: center; color: var(--text-gray); display: block; padding: 32px 24px;">No classes scheduled for today. Add one above!</div>`;
+            return;
+        }
+
+        schedule.forEach((entry, index) => {
+            let card = document.createElement("div");
+            card.className = "schedule-list-card";
+            card.innerHTML = `
+                <div class="time">${entry.time}</div>
+                <div class="details">
+                    <h3>${entry.subject}</h3>
+                    <p>🏛️ <strong>Room:</strong> ${entry.room} &nbsp;&nbsp;|&nbsp;&nbsp; 👤 <strong>Teacher:</strong> ${entry.teacher}</p>
+                </div>
+                <button class="delete-entry-btn" onclick="deleteEntry(${index})">✕ Delete</button>
+            `;
+            listDiv.appendChild(card);
+        });
+    }
+
+    // Add schedule entry
+    function addEntry() {
+        let time = document.getElementById("timeInput").value.trim();
+        let subject = document.getElementById("subjectInput").value.trim();
+        let room = document.getElementById("roomInput").value.trim();
+        let teacher = document.getElementById("teacherInput").value.trim();
+
+        if (time === "" || subject === "" || room === "" || teacher === "") {
+            alert("Please fill in all the schedule details.");
+            return;
+        }
+
+        let schedule = getSchedule();
+        schedule.push({ time, subject, room, teacher });
+        saveSchedule(schedule);
+        renderSchedule();
+
+        // Clear inputs
+        document.getElementById("timeInput").value = "";
+        document.getElementById("subjectInput").value = "";
+        document.getElementById("roomInput").value = "";
+        document.getElementById("teacherInput").value = "";
+    }
+
+    // Delete schedule entry
+    function deleteEntry(index) {
+        if (confirm("Are you sure you want to delete this schedule entry?")) {
+            let schedule = getSchedule();
+            schedule.splice(index, 1);
+            saveSchedule(schedule);
+            renderSchedule();
+        }
+    }
+
+    function goBack() {
+        window.location.href = "Dashboard.html";
+    }
+
+    // Initial render
+    renderSchedule();
+</script>
+</body>
+</html>
